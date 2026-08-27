@@ -10,6 +10,77 @@ int main() {
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
 
+    // Declaração dos vetores para as linha e coluna
+    char letras [10] = {'A' , 'B' , 'C' , 'D', 'E' , 'F', 'G' , 'H' , 'I', 'J' };
+    int numeros [10] = {1, 2 ,3 , 4, 5, 6, 7, 8, 9, 10};
+
+    // Declaração das matriz
+    int tabuleiro [10] [10];
+
+    // Vetores que representam os dois navios
+    int navioHorizontal [3] = {3, 3, 3};
+    int navioVertical [3] = {3, 3, 3,};
+
+    // Inicializa o tabuleiro com 0 representando a água
+    for ( int i = 0; i < 10; i++)
+    {
+        for ( int j = 0; j < 10; j++)
+        {       
+            tabuleiro [i][j] = 0;
+        }
+    }
+
+    //==================================
+    // POSICIONAMENTO O NAVIO HORIZONTAL
+    //==================================
+
+    // Coordenada inicial: c3
+    int linhaHorizontal = 2;
+    int colunaHorizontal = 2;
+
+    for (int j = 0; j < 3; j++)
+    {
+        tabuleiro[linhaHorizontal] [colunaHorizontal + j] = navioHorizontal[j];
+    }
+
+    //=================================
+    // POSICIONAMENTO O NAVIO VERTICAL
+    //=================================
+
+    // Coordenada inicil: G6
+    int linhavertical = 5;
+    int colunaVertical = 6;
+
+    for (int i = 0; i < 3; i++)
+    {
+        tabuleiro [linhavertical + i] [colunaVertical] = navioVertical[i]; 
+    }
+
+
+    printf ("\n=== TABULEIRO BATALHA NOVAL=== \n");
+
+    // Exibe as letras da coluna
+    printf ("   ");
+    for ( int j = 0; j < 10; j++)
+        {
+            printf ("%c ", letras[j]);
+        }
+    printf ("\n");
+
+    // Exibe os números das linhas e os valores do tabuleiro
+    for (int i = 0; i < 10; i++)
+    {
+        printf ("%2d " , numeros[i]);
+        
+        for ( int j = 0; j < 10; j++)
+        {
+            printf ("%d ", tabuleiro[i][j]);
+        }
+        printf ("\n");
+    }
+
+    
+    
     // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
     // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
     // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
