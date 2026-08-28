@@ -3,6 +3,8 @@
 // Desafio Batalha Naval - MateCheck
 // Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
 // Siga os comentários para implementar cada parte do desafio.
+#define linha 10
+#define coluna 10
 
 int main() {
     // Nível Novato - Posicionamento dos Navios
@@ -20,6 +22,8 @@ int main() {
     // Vetores que representam os dois navios
     int navioHorizontal [3] = {3, 3, 3};
     int navioVertical [3] = {3, 3, 3,};
+    int navioDiagonal1 [3] = {3, 3, 3};
+    int navilDiagonal2 [3] = {3, 3, 3};
 
     // Inicializa o tabuleiro com 0 representando a água
     for ( int i = 0; i < 10; i++)
@@ -56,6 +60,26 @@ int main() {
         tabuleiro [linhavertical + i] [colunaVertical] = navioVertical[i]; 
     }
 
+    //===========================================
+    // POSICIONAMENTO O NAVIOL DIAGONAL PRIMARIOL
+    //===========================================
+
+    // Coordenada inicil C8
+
+    for (int i = 0; i < 3; i++)
+    {
+        tabuleiro [7 + i ] [2 -  i] = navioDiagonal1 [i];
+    }
+
+    //===========================================
+    // POSICIONAMENTO O NAVIL DIAGONAL SEGUNDARIO
+    //===========================================
+
+    // Coordenada inicil H1
+    for ( int i = 0; i < 3; i++)
+    {
+        tabuleiro [0 + i] [7 + i] = navilDiagonal2[i];
+    }
 
     printf ("\n=== TABULEIRO BATALHA NOVAL=== \n");
 
@@ -70,7 +94,7 @@ int main() {
     // Exibe os números das linhas e os valores do tabuleiro
     for (int i = 0; i < 10; i++)
     {
-        printf ("%2d " , numeros[i]);
+        printf ("%2d ", numeros[i]);
         
         for ( int j = 0; j < 10; j++)
         {
